@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 2a</title>
+    <style>
+        .container{
+            width:960px;
+            height:0px auto;
+            display:inline-flex;
+            padding-right:10px;
+        }
+        table {
+            width: 400px;
+            border-collapse: collapse;
+            margin: 50px auto;
+            font-family: Arial, sans-serif;
+        }
+        th {
+            background-color: lightgray;
+            color: rgb(246, 109, 109);
+            text-align: center;
+            font-size: 20px;
+            padding: 10px;
+        }
+        td {
+            padding: 5px;
+            background-color: rgba(231, 235, 235, 0.482);
+        }
+        input[type="text"], input[type="password"] {
+            width: 80%;
+            padding: 2px;
+        }
+        input[type="submit"] {
+            padding: 5px 10px;
+            background-color: lightgray;
+            border: 1px solid gray;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <table border="1">
+        <tr>
+            <th colspan="2">THÔNG TIN ĐĂNG KÝ</th>
+        </tr>
+        <tr>
+            <td>Họ tên</td>
+            <td><input type="text" name="hoten" placeholder="Họ tên"></td>
+        </tr>
+        <tr>
+            <td>Mật khẩu</td>
+            <td><input type="password" name="matkhau" placeholder="Mật khẩu"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td  style="text-align: left;">
+                <input type="submit" value="Nhập">
+            </td>
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <th colspan="2">THÔNG TIN ĐĂNG NHẬP</th>
+        </tr>
+        <tr>
+            <td>Use name</td>
+            <td><input type="text" name="hoten" placeholder="Yourname"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="matkhau" placeholder="YourPWD"></td>
+        </tr>
+        
+        </tr>
+    </table>
+</div>
+</body>
+</html>

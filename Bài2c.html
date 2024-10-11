@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chọn loại cafe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+           
+        }
+        .container {
+            border:1px solid black;
+            width:400px;
+            margin:0px auto;
+        }
+        .result {
+            margin-top: 20px;
+            color: red;
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 style="margin-left:10px">Chọn loại cafe</h2>
+        
+        <form id="coffeeForm" style="margin-left:10px">
+            <label><input type="checkbox" name="coffee" value="Trung Nguyen"> Trung Nguyen</label>
+            <label><input type="checkbox" name="coffee" value="Me Kong"> Me Kong</label>
+            <label><input type="checkbox" name="coffee" value="New Life"> New Life</label>
+            <label><input type="checkbox" name="coffee" value="Ocean Blue"> Ocean Blue</label>
+            <label><input type="checkbox" name="coffee" value="Blue Space"> Blue Space</label>
+            <label><input type="checkbox" name="coffee" value="Windows"> Windows</label>
+        </form>
+
+        <button onclick="getSelectedCoffees()" style="margin-left:10px">Chọn</button>
+
+        <div class="result" id="result" style="margin-left:10px; margin-bottom:10px">Bạn chọn cafe:</div>
+    </div>
+
+    <script>
+        function getSelectedCoffees() {
+            const checkboxes = document.querySelectorAll('input[name="coffee"]:checked');
+            const selectedCoffees = Array.from(checkboxes).map(cb => cb.value);
+
+            const resultDiv = document.getElementById('result');
+            if (selectedCoffees.length > 0) {
+                resultDiv.textContent = "Bạn chọn cafe: " + selectedCoffees.join(", ");
+            } else {
+                resultDiv.textContent = "Bạn chưa chọn loại cafe nào.";
+            }
+        }
+    </script>
+
+</body>
+</html>

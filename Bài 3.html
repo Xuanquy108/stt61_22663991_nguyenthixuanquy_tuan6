@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay Đổi Hình Ngẫu Nhiên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        img {
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+        }
+        .btt{
+            display:flex;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #969696;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button.stop {
+            background-color: #989797;
+        }
+        button.stop:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Thay Đổi Hình Ảnh Ngẫu Nhiên</h2>
+    <img id="image" src="/image/b1.jpg" alt="Hình ảnh">
+    <div class="btt">
+    <button onclick="play()">Play</button>
+    <button class="stop" onclick="stop()">Stop</button>
+    </div>
+
+    <script>
+        // Mảng chứa các tên file ảnh
+        var images = ['/image/b1.jpg', '/image/b2.jpg', '/image/b3.jpg', '/image/b4.jpg', '/image/b5.jpg', '/image/b6.jpg', '/image/b7.jpg', '/image/b8.jpg', '/image/b9.jpg', '/image/b10.jpg'];
+        var intervalId;
+
+        function play() {
+            if (!intervalId) {
+                intervalId = setInterval(function() {
+                    // Lấy ngẫu nhiên một hình trong mảng
+                    var randomIndex = Math.floor(Math.random() * images.length);
+                    document.getElementById('image').src = images[randomIndex];
+                }, 1000); // Thay đổi hình sau mỗi 1 giây
+            }
+        }
+
+        function stop() {
+            clearInterval(intervalId);
+            intervalId = null; // Đặt lại để có thể play lại
+        }
+    </script>
+
+</body>
+</html>

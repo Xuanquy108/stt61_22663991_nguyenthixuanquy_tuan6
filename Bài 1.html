@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 400px;
+            margin: 0 auto;
+            background-color: rgb(243, 241, 238);
+            border: 1px solid black;
+        }
+        table {
+            width: 100%;
+            border: 1px solid;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table id="Table"> 
+            <tr>
+                <td colspan="3" align="center" style="color:rgb(226, 43, 198)">DANH SÁCH SINH VIÊN</td>
+            </tr>
+            <tr>
+                <th>MSSV</th>
+                <th>Tên</th>
+                <th>Lớp</th>
+            </tr>
+        </table>
+        <button onclick="addRow()">Thêm hàng</button>
+    </div>
+
+    <script>
+        function addRow() {
+            var table = document.getElementById("Table"); // Lấy thẻ table thay vì tr
+            var mssv = prompt("Nhập MSSV:");
+            var name = prompt("Nhập tên:");
+            var lop = prompt("Nhập tên lớp:");
+
+            if (mssv !== null && name !== null && lop !== null) { // Kiểm tra đầu vào không bị null
+                // Tạo hàng mới
+                var row = table.insertRow();
+
+                // Thêm các ô dữ liệu vào hàng mới
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+
+                // Gán giá trị cho các ô
+                cell1.innerHTML = mssv;
+                cell2.innerHTML = name;
+                cell3.innerHTML = lop;
+            } else {
+                alert("Bạn đã hủy hoặc chưa nhập đủ thông tin.");
+            }
+        }
+    </script>
+</body>
+</html>
